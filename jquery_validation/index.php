@@ -29,40 +29,45 @@
         <hr><br>
         <form class="row g-3" action="ajax.php" method="POST" id="form" enctype="multipart/form-data">
             <div class="col-md-6">
+                <label for="file" class="form-label">Upload file</label>
+                <label id="file-error" class="error" for="file"></label>
+                <input type="file" class="form-control" id="file" name="file">
+            </div>
+            <div class="col-md-6">
                 <label for="fname" class="form-label">First Name</label>
                 <label id="fname-error" class="error" for="fname"></label>
                 <input type="text" class="form-control" placeholder="Enter your first name" value="<?php echo $fname; ?>" id="fname" name="fname">
             </div>
             <div class="col-md-6">
                 <label for="lname" class="form-label">Last Name</label>
-                <label class="error" id="lname-error" for="lname"></label>    
+                <label class="error" id="lname-error" for="lname"></label>
                 <input type="text" class="form-control" placeholder="Enter your last name" value="<?php echo $lname; ?>" id="lname" name="lname">
             </div>
             <div class="col-md-6">
                 <label for="email" class="form-label">E-Mail</label>
-                <label class="error" id="email-error" for="email"></label>    
+                <label class="error" id="email-error" for="email"></label>
                 <input type="text" class="form-control" placeholder="Enter your email" value="<?php echo $email; ?>" id="email" name="email">
             </div>
             <div class="col-md-6">
                 <label for="phone" class="form-label">Phone Number</label>
-                <label class="error" id="phone-error" for="phone"></label>    
+                <label class="error" id="phone-error" for="phone"></label>
                 <input type="number" class="form-control" placeholder="Enter your phone number" value="<?php echo $phone; ?>" id="phone" name="phone">
             </div>
             <div class="col-md-6">
                 <label for="password" class="form-label">Password</label>
                 <a href="" id="showpassword" class="showhidefont"><i class="fa-solid fa-eye-slash"></i></a>
-                <label class="error" id="password-error" for="password"></label>    
+                <label class="error" id="password-error" for="password"></label>
                 <input type="password" class="form-control" placeholder="Enter your password" value="<?php echo $password; ?>" id="password" name="password">
             </div>
             <div class="col-md-6">
                 <label for="cpassword" class="form-label">Confirm Password</label>
                 <a href="" id="showcpassword" class="showhidefont"><i class="fa-solid fa-eye-slash"></i></a>
-                <label class="error" id="cpassword-error" for="cpassword"></label>    
+                <label class="error" id="cpassword-error" for="cpassword"></label>
                 <input type="password" class="form-control" placeholder="Enter your confirm password" value="<?php echo $cpassword; ?>" id="cpassword" name="cpassword">
             </div>
             <div class="col-md-6">
                 <label for="gender" class="form-label">Gender</label>
-                <label class="error" id="gender-error" for="gender"> </label>    
+                <label class="error" id="gender-error" for="gender"> </label>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" id="gender1" <?php echo ($gender == 'Male') ? 'checked' : '' ?> name="gender" value="Male">
                     <label class="form-check-label" for="gender">Male</label>
