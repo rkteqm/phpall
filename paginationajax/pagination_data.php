@@ -30,7 +30,7 @@ if (isset($_POST['mypage']) == true) {
                 <td>' . $email . '</td>
                 <td>' . $phone . '</td>
                 <td>' . $gender . '</td>
-                <td><img src="../assignment3clone/assets/images/' . $file . '" alt="" style="height:30px; width:50px"></td>
+                <td><img src="../../assignment3clone/assets/images/' . $file . '" alt="" style="width:60px"></td>
                 </tr>
                 ';
             $sr += 1;

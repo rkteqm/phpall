@@ -16,11 +16,12 @@
             <table id="mytable" class="display" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>User Id</th>
+                        <th>Sr. No.</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
+                        <th>Gender</th>
                         <th>Image</th>
                     </tr>
                 </thead>
@@ -49,7 +50,7 @@
                                 <td>' . $email . '</td>
                                 <td>' . $phone . '</td>
                                 <td>' . $gender . '</td>
-                                <td><img src="../assignment3clone/assets/images/' . $file . '" alt="" style="height:30px; width:50px"></td>
+                                <td><img src="../../assignment3clone/assets/images/' . $file . '" alt="" style="width:60px"></td>
                                 </tr>
                                 ';
                             if ($sr == 5) {
