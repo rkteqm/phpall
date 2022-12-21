@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <table id="mytable" class="display" width="100%" cellspacing="0">
+            <table id="mytable" class="table" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th>Sr. No.</th>
@@ -25,7 +25,7 @@
                         <th>Image</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="test">
                     <?php
                     include_once("conn.php");
                     $sql = "SELECT * FROM `users`";
@@ -43,14 +43,14 @@
                             $file = $row['file'];
 
                             echo '
-                                <tr class="test">
+                                <tr>
                                 <td>' . $sr . '</td>
                                 <td>' . $fname . '</td>
                                 <td>' . $lname . '</td>
                                 <td>' . $email . '</td>
                                 <td>' . $phone . '</td>
                                 <td>' . $gender . '</td>
-                                <td><img src="../../assignment3clone/assets/images/' . $file . '" alt="" style="width:60px"></td>
+                                <td><img src="../../assignment3clone/assets/images/' . $file . '" alt="" style="height:40px; width:70px;"></td>
                                 </tr>
                                 ';
                             if ($sr == 5) {
@@ -67,10 +67,13 @@
         <nav aria-label="Page navigation example">
             <ul class="pagination">
                 <?php
-                $count = $num / 5;
-                $count = $count + 1;
+                $count = ceil($num / 5);
                 for ($i = 1; $i <= $count; $i++) {
-                    echo '<li class="page-item"><a class="page-link mypage" href="#">' . $i . '</a></li>';
+                    if($i == 1){
+                        echo '<li class="page-item active"><a class="page-link" href="#">' . $i . '</a></li>';
+                    }else{
+                        echo '<li class="page-item"><a class="page-link" href="#">' . $i . '</a></li>';
+                    }
                 }
                 ?>
             </ul>
@@ -78,7 +81,10 @@
     </div>
     <script>
         $(document).ready(function() {
-            $('.mypage').click(function() {
+            $('.page-link').click(function() {
+                $(".page-item").removeClass("active");
+                addclas = $(this).parent();
+                addclas.addClass("active")
                 var count = $(this).html();
                 $.ajax({
                     url: 'pagination_data.php',
