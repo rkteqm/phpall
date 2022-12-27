@@ -17,7 +17,11 @@ abstract class Base
 {
     function __construct()
     {
-        echo "this is abstract class constructor ";
+        echo "this is abstract class constructor <br>";
+    }
+    function __destruct()
+    {
+        echo "this is abstract class destructor <br>";
     }
 
     // This is abstract function
@@ -25,13 +29,13 @@ abstract class Base
 }
 class Derived extends base
 {
-    function __construct()
-    {
-        echo "\n Derived class constructor";
-    }
+    // function __construct()
+    // {
+    //     echo "\n Derived class constructor<br>";
+    // }
     function printdata()
     {
-        echo "\n <br>Derived class printdata function";
+        echo "\n <br>Derived class printdata function<br>";
     }
 }
 $b1 = new Derived;
